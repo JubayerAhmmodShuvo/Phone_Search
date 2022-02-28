@@ -1,3 +1,13 @@
 h1 {
-    color: red;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600!important;
+}
+
+.btn {
+    background-color: #1ad9d2!important;
+}
+
+.btn:hover {
+    background-color: #57fff9 !important;
+    font-weight: bold !important;
 }
