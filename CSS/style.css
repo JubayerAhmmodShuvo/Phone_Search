@@ -5,9 +5,22 @@ h1 {
 
 .btn {
     background-color: #1ad9d2!important;
+    color: #000!important;
 }
 
 .btn:hover {
-    background-color: #57fff9 !important;
+    background-color: #5fe6f0 !important;
     font-weight: bold !important;
+    color: #000!important;
+}
+
+h2 {
+    color: rgb(192, 21, 214);
+}
+
+#message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
 }
