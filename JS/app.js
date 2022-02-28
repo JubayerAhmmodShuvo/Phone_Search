@@ -20,8 +20,22 @@ const showPhoneDetails = (phones) => {
         document.getElementById('message').style.display = 'block';
     }
     phones.slice(0, 20).forEach(phone => {
-        console.log(phone);
 
+        const div = document.createElement('div');
+        div.classList.add('col');
+        div.innerHTML = `
+        <div class="card h-100 mt-5">
+                    <img class="h-75 mb-3" src="${phone.image}" class="card-img-top" alt="phone image">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2 text-center"> Name:${phone.phone_name}</h5>
+                        <h5 class="card-title mb-2 text-center"> Brand:${phone.brand}</h5>
+                        <div class="d-flex justify-content-end mt-2">
+                            <button class="btn btn-primary border-0 ">Details</button>
+                        </div>
+                    </div>
+                </div>
+        `;
+        searchResult.appendChild(div);
     });
 
 };
