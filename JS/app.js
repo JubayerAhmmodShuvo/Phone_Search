@@ -1,5 +1,7 @@
 document.getElementById('message').style.display = 'none';
+document.getElementById('spinner').style.display = 'none';
 const searchPhone = () => {
+    document.getElementById('spinner').style.display = 'block';
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
@@ -18,6 +20,7 @@ const showPhoneDetails = (phones) => {
     searchResult.innerHTML = '';
     if (!phones.length) {
         document.getElementById('message').style.display = 'block';
+        document.getElementById('spinner').style.display = 'none';
     }
     phones.slice(0, 20).forEach(phone => {
 
