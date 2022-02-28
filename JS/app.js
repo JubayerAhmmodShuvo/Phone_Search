@@ -6,12 +6,15 @@ const searchPhone = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
+    const details = document.getElementById('phone-details');
+    details.innerHTML = '';
     if (searchText.length > 0) { /* fetch url */
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
             .then(response => response.json())
             .then(data => showPhoneDetails(data.data));
     } else {
+
         document.getElementById('message2').style.display = 'block';
         document.getElementById('spinner').style.display = 'none';
         document.getElementById('message').style.display = 'none';
@@ -64,7 +67,7 @@ const loadPhoneDetail = id => {
 };
 const displayPhoneDetails = (phone) => {
     const details = document.getElementById('phone-details');
-    details.textContent = '';
+    details.innerHTML = '';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
