@@ -90,30 +90,30 @@ const loadPhoneDetail = id => {
 // show details after clicking details button on
 
 const displayPhoneDetails = (phone) => {
-    const details = document.getElementById('phone-details');
-    details.innerHTML = '';
-    const div = document.createElement('div');
-    div.classList.add('card');
-    const ul = document.createElement('ul');
-    const li = document.createElement('li');
-    div.innerHTML = `
+        const details = document.getElementById('phone-details');
+        details.innerHTML = '';
+        const div = document.createElement('div');
+        div.classList.add('card');
+        const ul = document.createElement('ul');
+        const li = document.createElement('li');
+        div.innerHTML = `
     <img class="h-50  img-fluid mb-3 " src="${phone.image}" class="card-img-top" alt="phone image">
                     <div class="card-body">
                         <h5 class=" mb-2 "> Name:${phone.name}</h5>
                         <h5 class=" mb-3 "> Brand:${phone.brand}</h5>
-                        <h6 class=" mb-4 ">Release Date: ${phone.releaseDate  }</h6>
+                        <h6 class=" mb-4 ">Release Date: ${phone.releaseDate? ` ${phone.releaseDate}`:` Release Date Not Found`}</h6>
                       
                         <li> Storage: ${phone.mainFeatures.storage}</li>
                         <li>Display Size: ${phone.mainFeatures.displaySize}</li>
                         <li>ChipSet: ${phone.mainFeatures.chipSet}</li>
                         <li>Memory: ${phone.mainFeatures.memory}</li>
                         <li>Sensors: ${phone.mainFeatures.sensors}</li>
-                        <li>WLAN:${phone.others?.WLAN ?? "No WLAN Detail Found"}</li>
+                        <li>WLAN:${phone.others?.WLAN ?? " No WLAN Detail Found"}</li>
                         <li>Memory:${phone.others?.Bluetooth ?? "No Bluetooth Detail Found" }</li>
-                        <li>Bluetooth:${phone.others?.GPS ?? "No GPS Detail Found"}</li>
-                        <li>NFC:${phone.others?.NFC ?? "No NFC Detail Found"}</li>
-                        <li>Radio:${phone.others?.Radio ?? "No Radio Detail Found"}</li>
-                        <li>USB:${phone.others?.USB ?? "No USB Detail Found"}</li>
+                        <li>Bluetooth:${phone.others?.GPS ?? " No GPS Detail Found"}</li>
+                        <li>NFC:${phone.others?.NFC ?? " No NFC Detail Found"}</li>
+                        <li>Radio:${phone.others?.Radio ?? " No Radio Detail Found"}</li>
+                        <li>USB:${phone.others?.USB ?? " No USB Detail Found"}</li>
   `;
 
     div.appendChild(ul);
