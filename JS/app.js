@@ -7,9 +7,11 @@ document.getElementById('spinner').style.display = 'none';
 // search function for search bar
 
 const searchPhone = () => {
+    document.getElementById('message2').style.display = 'none';
     document.getElementById('spinner').style.display = 'block';
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
+
 
     // clear field
 
@@ -23,6 +25,7 @@ const searchPhone = () => {
     searchResult.innerHTML = '';
     if (searchText.length > 0) {
         /* fetch url */
+
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
             .then(response => response.json())
