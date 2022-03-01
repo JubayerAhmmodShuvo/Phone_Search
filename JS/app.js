@@ -62,8 +62,8 @@ const showPhoneDetails = (phones) => {
         <div class="card h-100 mt-5">
                     <img class="h-75 mb-3" src="${phone.image}" class="card-img-top" alt="phone image">
                     <div class="card-body">
-                        <h5 class="card-title mb-2 text-center"> Name:${phone.phone_name}</h5>
-                        <h5 class="card-title mb-2 text-center"> Brand:${phone.brand}</h5>
+                        <h5 class="card-title mb-2 text-center"> ${phone.phone_name}</h5>
+                        <h5 class="card-title mb-2 text-center"> ${phone.brand}</h5>
                         <div class="d-flex justify-content-end mt-2">
                             <button onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary border-0 ">Details</button>
                         </div>
@@ -100,23 +100,23 @@ const displayPhoneDetails = (phone) => {
         const ul = document.createElement('ul');
         const li = document.createElement('li');
         div.innerHTML = `
-    <img class="h-50  img-fluid mb-3 " src="${phone.image}" class="card-img-top" alt="phone image">
+    <img  src="${phone.image}" class="card-img-top h-50  mb-3" alt="phone image">
                     <div class="card-body">
-                        <h5 class=" mb-2 "> Name:${phone.name}</h5>
-                        <h5 class=" mb-3 "> Brand:${phone.brand}</h5>
-                        <h6 class=" mb-4 ">Release Date: ${phone.releaseDate? ` ${phone.releaseDate}`:` Release Date Not Found`}</h6>
+                        <h5 class=" mb-2 text-center "> ${ phone.name}</h5>
+                        <h5 class=" mb-3 text-center"> ${ phone.brand}</h5>
+                        <h6 class=" mb-4 "><strong>Release Date:</strong> ${phone.releaseDate? ` ${phone.releaseDate}`:` Release Date Not Found`}</h6>
                       
-                        <li> Storage: ${phone.mainFeatures.storage}</li>
-                        <li>Display Size: ${phone.mainFeatures.displaySize}</li>
-                        <li>ChipSet: ${phone.mainFeatures.chipSet}</li>
-                        <li>Memory: ${phone.mainFeatures.memory}</li>
-                        <li>Sensors: ${phone.mainFeatures.sensors}</li>
-                        <li>WLAN:${phone.others?.WLAN ?? " No WLAN Detail Found"}</li>
-                        <li>Memory:${phone.others?.Bluetooth ?? "No Bluetooth Detail Found" }</li>
-                        <li>Bluetooth:${phone.others?.GPS ?? " No GPS Detail Found"}</li>
-                        <li>NFC:${phone.others?.NFC ?? " No NFC Detail Found"}</li>
-                        <li>Radio:${phone.others?.Radio ?? " No Radio Detail Found"}</li>
-                        <li>USB:${phone.others?.USB ?? " No USB Detail Found"}</li>
+                        <li><strong>Storage:</strong>  ${phone.mainFeatures.storage}</li>
+                        <li><strong>Display Size:</strong> ${phone.mainFeatures.displaySize}</li>
+                        <li><strong>Memory:</strong> ${phone.mainFeatures.memory}</li>
+                        <li><strong>Sensors:</strong> ${phone.mainFeatures.sensors}</li>
+                        <li><strong>WLAN:</strong>${phone.others?.WLAN ?? " No WLAN Detail Found"}</li>
+                        <li><strong>ChipSet:</strong> ${phone.mainFeatures.chipSet}</li>
+                        <li><strong>Bluetooth:</strong>${phone.others?.Bluetooth ?? "No Bluetooth Detail Found" }</li>
+                        <li><strong>GPS:</strong>${phone.others?.GPS ?? " No GPS Detail Found"}</li>
+                        <li><strong>NFC:</strong>${phone.others?.NFC ?? " No NFC Detail Found"}</li>
+                        <li><strong>Radio:</strong>${phone.others?.Radio ?? " No Radio Detail Found"}</li>
+                        <li><strong>USB:</strong>${phone.others?.USB ?? " No USB Detail Found"}</li>
   `;
 
     div.appendChild(ul);
