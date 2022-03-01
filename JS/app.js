@@ -100,16 +100,19 @@ const displayPhoneDetails = (phone) => {
         const ul = document.createElement('ul');
         const li = document.createElement('li');
         div.innerHTML = `
-    <img  src="${phone.image}" class="card-img-top h-50  mb-3" alt="phone image">
+    <img  src="${phone.image}" class="card-img-top w-50 mx-auto  h-50  mb-3" alt="phone image">
                     <div class="card-body">
                         <h5 class=" mb-2 text-center "> ${ phone.name}</h5>
                         <h5 class=" mb-3 text-center"> ${ phone.brand}</h5>
+                        <hr><h5 class="text-center" > Release Date</h5><hr>
                         <h6 class=" mb-4 "><strong>Release Date:</strong> ${phone.releaseDate? ` ${phone.releaseDate}`:` Release Date Not Found`}</h6>
-                      
+                        <hr><h5 class="text-center" > MainFeatures</h5><hr>
                         <li><strong>Storage:</strong>  ${phone.mainFeatures.storage}</li>
                         <li><strong>Display Size:</strong> ${phone.mainFeatures.displaySize}</li>
                         <li><strong>Memory:</strong> ${phone.mainFeatures.memory}</li>
+                        <hr><h5 class="text-center" > Sensors</h5><hr>
                         <li><strong>Sensors:</strong> ${phone.mainFeatures.sensors}</li>
+                        <hr><h5 class="text-center" > Others</h5><hr>
                         <li><strong>WLAN:</strong>${phone.others?.WLAN ?? " No WLAN Detail Found"}</li>
                         <li><strong>ChipSet:</strong> ${phone.mainFeatures.chipSet}</li>
                         <li><strong>Bluetooth:</strong>${phone.others?.Bluetooth ?? "No Bluetooth Detail Found" }</li>
